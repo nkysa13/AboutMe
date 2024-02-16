@@ -1,0 +1,22 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.header{
+    display: flex;
+    background-color: #17ffff;
+    color: #2f3f40;
+    justify-content: space-between;
+    align-items: center;
+    ul{
+        list-style-type: none;
+    }
+    a{
+        text-decoration: none;
+        color: #3c8d8d;
+        &:hover{
+            &::before{
+                color: #3c9b9c;
+            }
+            color: #3caaaa;
+        }
+    }
+}
