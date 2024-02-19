@@ -1,109 +1,127 @@
 @import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import url("../node_modules/bootstrap-icons/font/bootstrap-icons.min.css");
+@import "color";
 
-
-%a-none-underline{
-    a{
+%a-none-underline {
+    a {
         text-decoration: none;
-        color: #2f3f40;
-        &:hover{
-            &::before{
-                color: #3c9b9c;
+        color: $color4;
+
+        &:hover {
+            &::before {
+                color: $color1;
             }
-            color: #3caaaa;
+
+            color: $color1;
         }
     }
 }
-.header{
+
+body {
+    .row {
+        margin: 0;
+    }
+
+    background-color: $color1;
+    color:$color4;
+}
+
+.header {
     display: flex;
-    background-color: #17ffff;
-    color: #2f3f40;
     justify-content: space-between;
     align-items: center;
+
+    background-color: $color3;
+
+
     direction: rtl;
-    ul{
-        list-style-type: none;
-    }
-    @extend %a-none-underline;
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style-type: none;  
+       i{
+        font-size: 32px
     
-   
-}
-.info{
-    margin: 0;
-    direction: rtl;
-#skills{
-    display: flex;
-    
-    direction: ltr;
-    flex-direction: column;
-  .skill{
-    display: flex;
-    align-items: center;
-    
-    progress{
-        margin-left:5px;
-        width:200px;
-        height: 20px;
-        border:none;
-        background-color: #2f3f40;
-        box-shadow: none;
-        &::-webkit-progress-bar{
-            background-color: #17ffff;
-        }
-        &::-moz-progress-bar {
-            background-color:#17ffff;
        }
     }
-}  
+    @extend %a-none-underline;
 }
 
-#profile{
+.info {
+    margin: 0;
     direction: rtl;
-    display: flex;
-    flex-direction: column;
-    
-}
-}
-h2{
-        direction:rtl;
+    #skills {
+        display: flex;
+        flex-direction: column;
+        direction: ltr;
+        .skill {
+            display: flex;
+            align-items: center;
+            progress {
+                margin-left: 5px;
+                width: 200px;
+                height: 20px;
+                border: none;
+                border-radius: 5px;
+                background-color: $color3;
+                box-shadow: none;
+                &::-webkit-progress-bar {
+                    background-color: $color2;
+                }
+                &::-moz-progress-bar {
+                    background-color: $color2;
+                }
+            }
+        }
     }
-.protiflo{
+    #profile {
+        display: flex;
+        flex-direction: column;
+        direction: rtl;
+    }
+}
+
+.protiflo {
     display: flex;
-    
     direction: rtl;
     width: 100%;
     height: auto;
-    
-    &-card{
+    h2 {
+        direction: rtl;
+    }
+
+    &-card {
         padding: 0;
-        img{
-            width:100%;
+        
+        img {
+            width: 100%;
             height: 80%;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
+
+            border-radius: 20px 20px 0 0;
         }
-        #information{
-            background-color:#5e898b ;
+        #information {
+            background-color: $color2 ;
+            direction: ltr;
             height: max-content;
-            border-bottom-right-radius: 25px;
-            border-bottom-left-radius: 25px;
+            border-radius: 0 0 20px 20px;
+           
         }
         height: 300px;
         border-radius: 15px;
         @extend %a-none-underline;
-        
-        .tags{
+        .tags {
             display: flex;
             flex-direction: row;
-        }
-        .tag{
-            background-color: #4f854a;
+            direction: ltr;
+            .tag {
+            background-color: $color3;
             width: max-content;
-            padding: 4px;
-            margin: 3px;
+            padding: 5px;
+            margin: 5px;
             border-radius: 25%;
         }
+        }
+        
     }
 }
-.row{
-        margin: 0;
-    }
