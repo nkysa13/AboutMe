@@ -33,11 +33,12 @@
 #skills{
     display: flex;
     
-    
+    direction: ltr;
     flex-direction: column;
   .skill{
     display: flex;
     align-items: center;
+    
     progress{
         margin-left:5px;
         width:200px;
@@ -62,12 +63,16 @@
     
 }
 }
+h2{
+        direction:rtl;
+    }
 .protiflo{
     display: flex;
     
     direction: rtl;
     width: 100%;
     height: auto;
+    
     &-card{
         padding: 0;
         img{
@@ -78,7 +83,7 @@
         }
         #information{
             background-color:#5e898b ;
-            height: 20%;
+            height: max-content;
             border-bottom-right-radius: 25px;
             border-bottom-left-radius: 25px;
         }
