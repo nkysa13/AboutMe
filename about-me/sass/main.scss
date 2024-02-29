@@ -11,8 +11,12 @@
             &::before {
                 color: $color1;
             }
-
+            
             color: $color1;
+            span{
+                animation: show-animation 5s ease-in-out infinite alternate;
+            }
+            
         }
     }
 }
@@ -38,12 +42,16 @@ body {
     ul {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        
         list-style-type: none;  
+        direction: ltr;
        i{
-        font-size: 32px
+        font-size: 24px;
+        padding-right: 3px
     
        }
+       
+       
     }
     @extend %a-none-underline;
 }
@@ -57,7 +65,10 @@ body {
         direction: ltr;
         .skill {
             display: flex;
-            align-items: center;
+            .nameSkill{
+                width: 10rem;
+            }
+            
             progress {
                 margin-left: 5px;
                 width: 200px;
@@ -124,4 +135,18 @@ body {
         }
         
     }
+}
+@keyframes show-animation {
+    
+    0%{ 
+        
+        
+    }
+    50%{
+        width: 50%;
+    }
+    100%{
+        width: 100%;
+    }
+    
 }
