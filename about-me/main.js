@@ -8,7 +8,7 @@ import "sass";
 
 import "./sass/main.scss";
 import { CPC } from "./src/portiflo.js";
-let o = `<div class=" col-xl-3 col-lg-4 col-sm-12 col-md-6 protiflo-card ">
+let o = `<div class=" col-xl-3 col-lg-4 col-sm-12 col-md-6 protiflo-card  ">
 <img src="/work.png" alt="">
 <div id="information">
   <div class="row">
@@ -34,4 +34,7 @@ let o = `<div class=" col-xl-3 col-lg-4 col-sm-12 col-md-6 protiflo-card ">
 
 </div>`
 let Potriflo = document.body.querySelector(".protiflo")
-Potriflo.appendChild(CPC(o))
+Potriflo.appendChild(CPC(o));
+Potriflo.appendChild(CPC(o));
+Potriflo.appendChild(CPC(o));
+Potriflo.appendChild(CPC(o));
