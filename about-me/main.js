@@ -7,4 +7,4 @@ import "jquery";
 import "sass";
 
 import "./sass/main.scss";
-import { CPC } from "./src/portiflo.js";
+import "./src/portiflo.js";
