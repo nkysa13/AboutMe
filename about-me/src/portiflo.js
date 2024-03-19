@@ -1,34 +1,49 @@
 'use strict'
+
 import a from "./object.js";
-let b=a
-export function CPC(tample){
+
+function CPC(tample){
     const tamplate = document.createElement("template");
     tamplate.innerHTML = tample.trim();
 
     return tamplate.content.firstElementChild;
 }
-let o = `<div class=" col-xl-3 col-lg-4 col-sm-12 col-md-6 protiflo-card  ">
-<img src=${b.urlImage} alt="">
-<div id="information">
-  <div class="row">
-    <div class="col-sm-6 col-12">
-      <nav>
-        <a href=${b.links}>${b.name}</a>
-      </nav>
-    </div>
-    <div class="col-6 tags">
-      <div class="row tagsplace">
-      
-      </div>
-    </div>
-  </div>
-  
-  
+function tagsCreate(...tags){
+    let TagRow = CPC(`<div class="row"></div>`)
+    for (let i=0;i<tags.length;i++){
+         
+        TagRow.appendChild(CPC(`<div class="col-4 tag ">${tags[i]}</div>`));
+        
+    }
+    return TagRow;
+}
+function CreateCard(obj ){
+    let card = CPC(`<div class=" col protiflo-card  "></div>`)
+    card.appendChild(CPC(`<img src=${obj.urlImage} alt="">`))
+    
+    let informationCard = CPC(`<div class="information"><div class="row"></div></div>`)
 
+    informationCard.appendChild(CPC(`<div class=" col-6"><nav><a href=${obj.links}>${obj.name}</a></nav></div>`));
+    
+    let tagsL = CPC(`<div class="col-6 tags"></div>`);
+    tagsL.appendChild(tagsCreate(...obj.tags));
+    informationCard.appendChild(tagsL);
+    card.appendChild(informationCard)
+    
+    return card
+}
 
-</div>
-
-</div>`
 let Potriflo = document.body.querySelector(".protiflo")
 
-Potriflo.appendChild(CPC(o));
+
+// for(let i=0 ;i<a.length;i++){
+//    Potriflo.appendChild(CreateCard(a[i]))
+// }
+
+ function cardCreateLisr(mainObject,listCard){
+    for(let i=0 ;i<listCard.length;i++){
+    mainObject.appendChild(CreateCard(listCard[i]))
+    }
+ }
+cardCreateLisr(Potriflo,a);
+
